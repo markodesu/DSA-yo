@@ -6,6 +6,7 @@ import BinarySearch from './components/SearchAlgorithms/BinarySearch';
 import Stack from './components/DataStructures/Stack';
 import Queue from './components/DataStructures/Queue';
 import LinkedList from './components/DataStructures/LinkedList';
+import HashFunction from './components/DataStructures/HashFunction';
 import BinaryTree from './components/Trees/BinaryTree';
 import AVL from './components/Trees/AVL';
 import RBT from './components/Trees/RBT';
@@ -131,6 +132,16 @@ export default function App() {
                   >
                     LinkedList
                   </Link>
+                  <Link 
+                    to="/hashfunction" 
+                    className={`px-4 py-2 transition-all duration-300 ${
+                      isActive('/hashfunction') 
+                        ? 'text-pink-600 font-semibold' 
+                        : 'text-gray-600 hover:text-pink-600'
+                    }`}
+                  >
+                    HashFunction
+                  </Link>                 
                 </div>
               </div>
 
@@ -183,6 +194,7 @@ export default function App() {
           <Route path="/stack" element={<Stack />} />
           <Route path="/queue" element={<Queue />} />
           <Route path="/linkedlist" element={<LinkedList />} />
+          <Route path="/hashfunction" element={<HashFunction />} />
           <Route path="/tree/binary" element={<BinaryTree />} />
           <Route path="/tree/avl" element={<AVL />} />
           <Route path="/tree/redblack" element={<RBT />} />

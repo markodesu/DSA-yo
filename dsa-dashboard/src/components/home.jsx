@@ -24,7 +24,7 @@ export default function Home() {
       items: [
         { name: 'Stack', path: '/stack', description: 'LIFO (Last In First Out) structure' },
         { name: 'Queue', path: '/queue', description: 'FIFO (First In First Out) structure' },
-        { name: 'Linked List', path: '/linkedlist', description: 'Dynamic linear data structure' }
+        { name: 'Linked List', path: '/linkedlist', description: 'Dynamic linear data structure' },
       ]
     },
     {
