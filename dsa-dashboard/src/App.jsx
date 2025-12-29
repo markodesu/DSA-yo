@@ -28,10 +28,10 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-pink-100 flex flex-col">
-      <header className="bg-gradient-to-r from-pink-600 to-pink-500 text-white p-6 text-center shadow-lg">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex flex-col">
+      <header className="bg-gradient-to-r from-slate-600 to-slate-500 text-white p-6 text-center shadow-lg">
         <h1 className="text-3xl font-bold tracking-tight">DSA Dashboard</h1>
-        <p className="text-pink-100 mt-2">Interactive Learning Platform</p>
+        <p className="text-slate-100 mt-2">Interactive Learning Platform</p>
       </header>
 
       <nav className="bg-white shadow-md">
@@ -42,8 +42,8 @@ export default function App() {
                 to="/" 
                 className={`text-lg font-semibold px-8 py-2 rounded-full transition-all duration-300 ${
                   isActive('/') 
-                    ? 'bg-pink-600 text-white shadow-md' 
-                    : 'bg-pink-100 text-pink-600 hover:bg-pink-200'
+                    ? 'bg-slate-600 text-white shadow-md' 
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                 }`}
               >
                 Home
@@ -52,14 +52,14 @@ export default function App() {
 
             <div className="flex flex-wrap justify-center gap-6">
               <div className="flex flex-col items-center">
-                <span className="text-sm font-semibold text-white bg-pink-600 px-4 py-1 rounded-full mb-2">Search</span>
+                <span className="text-sm font-semibold text-white bg-slate-600 px-4 py-1 rounded-full mb-2">Search</span>
                 <div className="flex gap-3">
                   <Link 
                     to="/search/linear" 
                     className={`px-4 py-2 transition-all duration-300 ${
                       isActive('/search/linear') 
-                        ? 'text-pink-600 font-semibold' 
-                        : 'text-gray-600 hover:text-pink-600'
+                        ? 'text-slate-600 font-semibold' 
+                        : 'text-gray-600 hover:text-slate-600'
                     }`}
                   >
                     Linear
@@ -68,8 +68,8 @@ export default function App() {
                     to="/search/binary" 
                     className={`px-4 py-2 transition-all duration-300 ${
                       isActive('/search/binary') 
-                        ? 'text-pink-600 font-semibold' 
-                        : 'text-gray-600 hover:text-pink-600'
+                        ? 'text-slate-600 font-semibold' 
+                        : 'text-gray-600 hover:text-slate-600'
                     }`}
                   >
                     Binary
@@ -78,36 +78,36 @@ export default function App() {
               </div>
 
               <div className="flex flex-col items-center">
-                <span className="text-sm font-semibold text-white bg-pink-600 px-4 py-1 rounded-full mb-2">Sort</span>
+                <span className="text-sm font-semibold text-white bg-slate-600 px-4 py-1 rounded-full mb-2">Sort</span>
                 <div className="relative group">
-                  <button className="flex items-center gap-2 px-4 py-2 text-pink-600 hover:bg-pink-50 rounded-lg transition-colors">
+                  <button className="flex items-center gap-2 px-4 py-2 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors">
                     Sorting Algorithms
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
                   <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
-                    <Link to="/sorting/bubble" className="block px-4 py-2 text-pink-600 hover:bg-pink-50">Bubble Sort</Link>
-                    <Link to="/sorting/quick" className="block px-4 py-2 text-pink-600 hover:bg-pink-50">Quick Sort</Link>
-                    <Link to="/sorting/merge" className="block px-4 py-2 text-pink-600 hover:bg-pink-50">Merge Sort</Link>
-                    <Link to="/sorting/insertion" className="block px-4 py-2 text-pink-600 hover:bg-pink-50">Insertion Sort</Link>
-                    <Link to="/sorting/selection" className="block px-4 py-2 text-pink-600 hover:bg-pink-50">Selection Sort</Link>
-                    <Link to="/sorting/radix" className="block px-4 py-2 text-pink-600 hover:bg-pink-50">Radix Sort</Link>
-                    <Link to="/sorting/counting" className="block px-4 py-2 text-pink-600 hover:bg-pink-50">Counting Sort</Link>
-                    <Link to="/sorting/heap" className="block px-4 py-2 text-pink-600 hover:bg-pink-50">Heap Sort</Link>
+                    <Link to="/sorting/bubble" className="block px-4 py-2 text-slate-600 hover:bg-slate-50">Bubble Sort</Link>
+                    <Link to="/sorting/quick" className="block px-4 py-2 text-slate-600 hover:bg-slate-50">Quick Sort</Link>
+                    <Link to="/sorting/merge" className="block px-4 py-2 text-slate-600 hover:bg-slate-50">Merge Sort</Link>
+                    <Link to="/sorting/insertion" className="block px-4 py-2 text-slate-600 hover:bg-slate-50">Insertion Sort</Link>
+                    <Link to="/sorting/selection" className="block px-4 py-2 text-slate-600 hover:bg-slate-50">Selection Sort</Link>
+                    <Link to="/sorting/radix" className="block px-4 py-2 text-slate-600 hover:bg-slate-50">Radix Sort</Link>
+                    <Link to="/sorting/counting" className="block px-4 py-2 text-slate-600 hover:bg-slate-50">Counting Sort</Link>
+                    <Link to="/sorting/heap" className="block px-4 py-2 text-slate-600 hover:bg-slate-50">Heap Sort</Link>
                   </div>
                 </div>
               </div>
 
               <div className="flex flex-col items-center">
-                <span className="text-sm font-semibold text-white bg-pink-600 px-4 py-1 rounded-full mb-2">Data Structures</span>
+                <span className="text-sm font-semibold text-white bg-slate-600 px-4 py-1 rounded-full mb-2">Data Structures</span>
                 <div className="flex gap-3">
                   <Link 
                     to="/stack" 
                     className={`px-4 py-2 transition-all duration-300 ${
                       isActive('/stack') 
-                        ? 'text-pink-600 font-semibold' 
-                        : 'text-gray-600 hover:text-pink-600'
+                        ? 'text-slate-600 font-semibold' 
+                        : 'text-gray-600 hover:text-slate-600'
                     }`}
                   >
                     Stack
@@ -116,8 +116,8 @@ export default function App() {
                     to="/queue" 
                     className={`px-4 py-2 transition-all duration-300 ${
                       isActive('/queue') 
-                        ? 'text-pink-600 font-semibold' 
-                        : 'text-gray-600 hover:text-pink-600'
+                        ? 'text-slate-600 font-semibold' 
+                        : 'text-gray-600 hover:text-slate-600'
                     }`}
                   >
                     Queue
@@ -126,8 +126,8 @@ export default function App() {
                     to="/linkedlist" 
                     className={`px-4 py-2 transition-all duration-300 ${
                       isActive('/linkedlist') 
-                        ? 'text-pink-600 font-semibold' 
-                        : 'text-gray-600 hover:text-pink-600'
+                        ? 'text-slate-600 font-semibold' 
+                        : 'text-gray-600 hover:text-slate-600'
                     }`}
                   >
                     LinkedList
@@ -136,8 +136,8 @@ export default function App() {
                     to="/hashfunction" 
                     className={`px-4 py-2 transition-all duration-300 ${
                       isActive('/hashfunction') 
-                        ? 'text-pink-600 font-semibold' 
-                        : 'text-gray-600 hover:text-pink-600'
+                        ? 'text-slate-600 font-semibold' 
+                        : 'text-gray-600 hover:text-slate-600'
                     }`}
                   >
                     HashFunction
@@ -146,27 +146,27 @@ export default function App() {
               </div>
 
               <div className="flex flex-col items-center">
-                <span className="text-sm font-semibold text-white bg-pink-600 px-4 py-1 rounded-full mb-2">Trees & Graphs</span>
+                <span className="text-sm font-semibold text-white bg-slate-600 px-4 py-1 rounded-full mb-2">Trees & Graphs</span>
                 <div className="flex gap-3">
                   <div className="relative group">
-                    <button className="flex items-center gap-2 px-4 py-2 text-pink-600 hover:bg-pink-50 rounded-lg transition-colors">
+                    <button className="flex items-center gap-2 px-4 py-2 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors">
                       Trees
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     </button>
                     <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
-                      <Link to="/tree/binary" className="block px-4 py-2 text-pink-600 hover:bg-pink-50">Binary Tree</Link>
-                      <Link to="/tree/avl" className="block px-4 py-2 text-pink-600 hover:bg-pink-50">AVL Tree</Link>
-                      <Link to="/tree/redblack" className="block px-4 py-2 text-pink-600 hover:bg-pink-50">Red-Black Tree</Link>
+                      <Link to="/tree/binary" className="block px-4 py-2 text-slate-600 hover:bg-slate-50">Binary Tree</Link>
+                      <Link to="/tree/avl" className="block px-4 py-2 text-slate-600 hover:bg-slate-50">AVL Tree</Link>
+                      <Link to="/tree/redblack" className="block px-4 py-2 text-slate-600 hover:bg-slate-50">Red-Black Tree</Link>
                     </div>
                   </div>
                   <Link 
                     to="/graph" 
                     className={`px-4 py-2 transition-all duration-300 ${
                       isActive('/graph') 
-                        ? 'text-pink-600 font-semibold' 
-                        : 'text-gray-600 hover:text-pink-600'
+                        ? 'text-slate-600 font-semibold' 
+                        : 'text-gray-600 hover:text-slate-600'
                     }`}
                   >
                     Graph
@@ -202,12 +202,12 @@ export default function App() {
         </Routes>
       </main>
 
-      <footer className="bg-gradient-to-r from-pink-600 to-pink-500 text-white py-6 mt-auto">
+      <footer className="bg-gradient-to-r from-slate-600 to-slate-500 text-white py-6 mt-auto">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-pink-100">
+          <p className="text-slate-100">
             © {new Date().getFullYear()} Mariiam Raiimzhanova DSA Dashboard. All rights reserved.
           </p>
-          <p className="text-pink-100 text-sm mt-2">
+          <p className="text-slate-100 text-sm mt-2">
             Created with ❤️ for educational purposes
           </p>
         </div>

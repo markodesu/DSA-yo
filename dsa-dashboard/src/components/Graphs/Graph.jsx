@@ -14,8 +14,6 @@ export default function Graph() {
   const [algorithm, setAlgorithm] = useState('dfs');
   const [result, setResult] = useState('');
   const [visitedNodes, setVisitedNodes] = useState(new Set());
-  const [distances, setDistances] = useState({});
-  const [mstEdges, setMstEdges] = useState([]);
   const [nodePositions, setNodePositions] = useState({});
   const [isDragging, setIsDragging] = useState(false);
   const [dragNode, setDragNode] = useState(null);
@@ -272,7 +270,6 @@ export default function Graph() {
         await new Promise(resolve => setTimeout(resolve, 1000));
       }
 
-      setMstEdges(mst);
       setResult(`MST Edges: ${mst.map(([from, to, weight]) => `${from}-${to}(${weight})`).join(', ')}`);
       setOperation('Prim\'s algorithm complete!');
     } catch (error) {
@@ -344,7 +341,6 @@ export default function Graph() {
       }
     }
 
-    setMstEdges(mst);
     setResult(`MST Edges: ${mst.map(([from, to, weight]) => `${from}-${to}(${weight})`).join(', ')}`);
     setOperation('Kruskal\'s algorithm complete!');
   };
@@ -358,8 +354,6 @@ export default function Graph() {
     setError('');
     setResult('');
     setVisitedNodes(new Set());
-    setDistances({});
-    setMstEdges([]);
     setHighlightedNodes([]);
     setHighlightedEdges([]);
     setAnimationStep(0);
@@ -410,6 +404,7 @@ export default function Graph() {
 
   useEffect(() => {
     setNodePositions(calculateNodePositions());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [graph]);
 
   const handleMouseDown = (node) => {
@@ -441,25 +436,25 @@ export default function Graph() {
       <div className="mb-8">
         <button
           onClick={() => setIsDefinitionOpen(!isDefinitionOpen)}
-          className="w-full text-left bg-pink-100 p-4 rounded-lg hover:bg-pink-200 transition-colors"
+          className="w-full text-left bg-slate-100 p-4 rounded-lg hover:bg-slate-200 transition-colors"
         >
-          <h2 className="text-xl font-semibold text-pink-800 flex justify-between items-center">
+          <h2 className="text-xl font-semibold text-slate-800 flex justify-between items-center">
             Graph Algorithms Definition
-            <span className="text-pink-600">{isDefinitionOpen ? '▼' : '▶'}</span>
+            <span className="text-slate-600">{isDefinitionOpen ? '▼' : '▶'}</span>
           </h2>
         </button>
         {isDefinitionOpen && (
           <div className="mt-4 p-4 bg-white rounded-lg shadow-md">
-            <h3 className="text-lg font-semibold text-pink-700 mb-2">What is a Graph?</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mb-2">What is a Graph?</h3>
             <p className="text-gray-700 mb-4">
               A graph is a non-linear data structure consisting of nodes (vertices) connected by edges.
               Graphs can be directed or undirected, and edges can have weights.
             </p>
 
-            <h3 className="text-lg font-semibold text-pink-700 mb-2">Graph Algorithms:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mb-2">Graph Algorithms:</h3>
             <div className="space-y-4">
               <div>
-                <h4 className="font-semibold text-pink-600">Breadth-First Search (BFS)</h4>
+                <h4 className="font-semibold text-slate-600">Breadth-First Search (BFS)</h4>
                 <p className="text-gray-700">
                   BFS is an algorithm for traversing or searching tree/graph data structures.
                   It explores all nodes at the present depth before moving on to nodes at the next depth level.
@@ -480,7 +475,7 @@ export default function Graph() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-pink-600">Depth-First Search (DFS)</h4>
+                <h4 className="font-semibold text-slate-600">Depth-First Search (DFS)</h4>
                 <p className="text-gray-700">
                   DFS is an algorithm for traversing or searching tree/graph data structures.
                   It starts at a root node and explores as far as possible along each branch before backtracking.
@@ -501,7 +496,7 @@ export default function Graph() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-pink-600">Dijkstra's Algorithm</h4>
+                <h4 className="font-semibold text-slate-600">Dijkstra's Algorithm</h4>
                 <p className="text-gray-700">
                   Dijkstra's algorithm finds the shortest path between nodes in a graph.
                   It works for graphs with non-negative edge weights.
@@ -522,7 +517,7 @@ export default function Graph() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-pink-600">Prim's Algorithm</h4>
+                <h4 className="font-semibold text-slate-600">Prim's Algorithm</h4>
                 <p className="text-gray-700">
                   Prim's algorithm finds a minimum spanning tree for a weighted undirected graph.
                   It starts from a single vertex and grows the tree by adding the cheapest edge.
@@ -543,7 +538,7 @@ export default function Graph() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-pink-600">Kruskal's Algorithm</h4>
+                <h4 className="font-semibold text-slate-600">Kruskal's Algorithm</h4>
                 <p className="text-gray-700">
                   Kruskal's algorithm finds a minimum spanning tree by sorting all edges
                   and adding them one by one, avoiding cycles.
@@ -569,11 +564,11 @@ export default function Graph() {
 
       <div className="space-y-8">
         <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-pink-600">Graph Operations</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-slate-600">Graph Operations</h2>
           
           {/* Instructions Panel */}
-          <div className="mb-6 p-4 bg-pink-50 rounded-lg">
-            <h3 className="text-lg font-semibold text-pink-700 mb-2">How to Build Your Graph:</h3>
+          <div className="mb-6 p-4 bg-slate-50 rounded-lg">
+            <h3 className="text-lg font-semibold text-slate-700 mb-2">How to Build Your Graph:</h3>
             <ol className="list-decimal list-inside space-y-2 text-gray-700">
               <li>Enter node names (letters or numbers) in the "Start Node" and "End Node" fields</li>
               <li>Optionally add a weight (number) to create a weighted edge</li>
@@ -581,9 +576,9 @@ export default function Graph() {
               <li>Repeat to build your graph structure</li>
               <li>Use "Remove Edge" to delete connections between nodes</li>
             </ol>
-            <div className="mt-4 p-3 bg-white rounded border border-pink-200">
+            <div className="mt-4 p-3 bg-white rounded border border-slate-200">
               <p className="text-sm text-gray-600">
-                <span className="font-semibold text-pink-600">Tip:</span> Start with a simple structure like:
+                <span className="font-semibold text-slate-600">Tip:</span> Start with a simple structure like:
                 <br />
                 A → B (weight: 1)
                 <br />
@@ -595,7 +590,7 @@ export default function Graph() {
           </div>
 
           {error && (
-            <div className="bg-pink-100 border border-pink-400 text-pink-700 px-4 py-3 rounded mb-4" role="alert">
+            <div className="bg-slate-100 border border-slate-400 text-slate-700 px-4 py-3 rounded mb-4" role="alert">
               {error}
             </div>
           )}
@@ -603,7 +598,7 @@ export default function Graph() {
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label htmlFor="startNode" className="block text-sm font-medium text-pink-700 mb-1">
+                <label htmlFor="startNode" className="block text-sm font-medium text-slate-700 mb-1">
                   Start Node
                 </label>
                 <input
@@ -612,11 +607,11 @@ export default function Graph() {
                   value={startNode}
                   onChange={(e) => setStartNode(e.target.value)}
                   placeholder="e.g., A"
-                  className="w-full p-2 border border-pink-200 rounded focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  className="w-full p-2 border border-slate-200 rounded focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
                 />
               </div>
               <div>
-                <label htmlFor="endNode" className="block text-sm font-medium text-pink-700 mb-1">
+                <label htmlFor="endNode" className="block text-sm font-medium text-slate-700 mb-1">
                   End Node
                 </label>
                 <input
@@ -625,12 +620,12 @@ export default function Graph() {
                   value={endNode}
                   onChange={(e) => setEndNode(e.target.value)}
                   placeholder="e.g., B"
-                  className="w-full p-2 border border-pink-200 rounded focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  className="w-full p-2 border border-slate-200 rounded focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
                 />
               </div>
             </div>
             <div>
-              <label htmlFor="weight" className="block text-sm font-medium text-pink-700 mb-1">
+              <label htmlFor="weight" className="block text-sm font-medium text-slate-700 mb-1">
                 Edge Weight (optional)
               </label>
               <input
@@ -640,14 +635,14 @@ export default function Graph() {
                 onChange={(e) => setWeight(e.target.value)}
                 placeholder="e.g., 1"
                 min="0"
-                className="w-full p-2 border border-pink-200 rounded focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                className="w-full p-2 border border-slate-200 rounded focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
               />
               <p className="mt-1 text-sm text-gray-500">Leave empty for unweighted edges</p>
             </div>
             <div className="flex gap-2">
               <button
                 onClick={addEdge}
-                className="flex-1 bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors flex items-center justify-center gap-2"
+                className="flex-1 bg-slate-600 text-white px-4 py-2 rounded hover:bg-slate-700 transition-colors flex items-center justify-center gap-2"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -656,7 +651,7 @@ export default function Graph() {
               </button>
               <button
                 onClick={removeEdge}
-                className="flex-1 bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors flex items-center justify-center gap-2"
+                className="flex-1 bg-slate-600 text-white px-4 py-2 rounded hover:bg-slate-700 transition-colors flex items-center justify-center gap-2"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
@@ -667,8 +662,8 @@ export default function Graph() {
           </div>
 
           {/* Current Graph Structure */}
-          <div className="mt-6 p-4 bg-pink-50 rounded-lg">
-            <h3 className="text-lg font-semibold text-pink-700 mb-2">Current Graph Structure:</h3>
+          <div className="mt-6 p-4 bg-slate-50 rounded-lg">
+            <h3 className="text-lg font-semibold text-slate-700 mb-2">Current Graph Structure:</h3>
             {Object.keys(graph).length === 0 ? (
               <p className="text-gray-600 italic">No nodes or edges added yet</p>
             ) : (
@@ -695,17 +690,17 @@ export default function Graph() {
         </div>
 
         <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-pink-600">Graph Algorithms</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-slate-600">Graph Algorithms</h2>
           <div className="space-y-4">
             <div>
-              <label htmlFor="algorithm" className="block text-sm font-medium text-pink-700 mb-1">
+              <label htmlFor="algorithm" className="block text-sm font-medium text-slate-700 mb-1">
                 Select Algorithm
               </label>
               <select
                 id="algorithm"
                 value={algorithm}
                 onChange={(e) => setAlgorithm(e.target.value)}
-                className="w-full p-2 border border-pink-200 rounded focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                className="w-full p-2 border border-slate-200 rounded focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
               >
                 <option value="dfs">Depth-First Search (DFS)</option>
                 <option value="bfs">Breadth-First Search (BFS)</option>
@@ -716,13 +711,13 @@ export default function Graph() {
             </div>
             <button
               onClick={runAlgorithm}
-              className="w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors"
+              className="w-full bg-slate-600 text-white px-4 py-2 rounded hover:bg-slate-700 transition-colors"
             >
               Run Algorithm
             </button>
             {result && (
-              <div className="p-4 bg-pink-50 rounded-lg">
-                <h3 className="text-lg font-semibold text-pink-700 mb-2">Result:</h3>
+              <div className="p-4 bg-slate-50 rounded-lg">
+                <h3 className="text-lg font-semibold text-slate-700 mb-2">Result:</h3>
                 <p className="text-gray-700 font-mono">{result}</p>
               </div>
             )}
@@ -730,12 +725,12 @@ export default function Graph() {
         </div>
 
         <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-pink-600">Visualization</h2>
-          <div className="relative h-[400px] bg-gradient-to-b from-pink-50 to-white rounded-lg">
-            <div className="absolute top-4 left-4 text-pink-600 font-semibold">
+          <h2 className="text-2xl font-semibold mb-4 text-slate-600">Visualization</h2>
+          <div className="relative h-[400px] bg-gradient-to-b from-slate-50 to-white rounded-lg">
+            <div className="absolute top-4 left-4 text-slate-600 font-semibold">
               Step {animationStep + 1}
             </div>
-            <div className="absolute top-4 right-4 text-pink-600 font-medium">
+            <div className="absolute top-4 right-4 text-slate-600 font-medium">
               {operation}
             </div>
             <svg 
@@ -774,7 +769,7 @@ export default function Graph() {
                           y={midY}
                           textAnchor="middle"
                           dominantBaseline="middle"
-                          className="text-xs fill-pink-600 font-medium"
+                          className="text-xs fill-slate-600 font-medium"
                         >
                           {weight}
                         </text>

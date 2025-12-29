@@ -79,7 +79,7 @@ const HashFunction = () => {
 
   return (
     <div className="p-6 max-w-3xl mx-auto bg-white shadow rounded">
-      <h2 className="text-2xl font-bold mb-4 text-pink-600">Hash Function Visualization</h2>
+      <h2 className="text-2xl font-bold mb-4 text-slate-600">Hash Function Visualization</h2>
 
       <div className="flex gap-4 mb-4">
         <input
@@ -111,7 +111,7 @@ const HashFunction = () => {
         />
         <button
           onClick={insert}
-          className="bg-pink-600 text-white px-4 py-1 rounded hover:bg-pink-700"
+          className="bg-slate-600 text-white px-4 py-1 rounded hover:bg-slate-700"
         >
           Insert
         </button>
@@ -129,13 +129,13 @@ const HashFunction = () => {
       <div className="mb-4">
         <button
           onClick={() => setShowInfo(!showInfo)}
-          className="text-pink-600 underline mb-2 focus:outline-none"
+          className="text-slate-600 underline mb-2 focus:outline-none"
         >
           {showInfo ? 'Hide Definitions ▲' : 'What is Open and Closed Hashing? ▼'}
         </button>
 
         {showInfo && (
-          <div className="bg-pink-50 border border-pink-300 text-sm p-4 rounded transition-all duration-300">
+          <div className="bg-slate-50 border border-pink-300 text-sm p-4 rounded transition-all duration-300">
             <p className="mb-2">
               <strong>Open Hashing (Chaining):</strong> Each bucket holds a list. When collisions occur, values are appended to that bucket’s list.
             </p>
@@ -154,13 +154,13 @@ const HashFunction = () => {
             {collisionStrategy === 'chaining' ? (
               <div className="flex flex-wrap gap-2">
                 {cell.map((val, i) => (
-                  <span key={i} className="bg-pink-200 text-pink-800 px-2 py-1 rounded">
+                  <span key={i} className="bg-slate-200 text-slate-800 px-2 py-1 rounded">
                     {val}
                   </span>
                 ))}
               </div>
             ) : (
-              <span className="text-pink-700 font-medium">
+              <span className="text-slate-700 font-medium">
                 {cell !== null ? cell : '—'}
               </span>
             )}

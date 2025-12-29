@@ -102,8 +102,8 @@ export default function QuickSort() {
     if (array.length === 0) return null;
 
     return (
-      <div className="relative h-[400px] bg-gradient-to-b from-pink-50 to-white rounded-lg p-6">
-        <div className="absolute top-4 left-4 text-pink-600 font-semibold">
+      <div className="relative h-[400px] bg-gradient-to-b from-slate-50 to-white rounded-lg p-6">
+        <div className="absolute top-4 left-4 text-slate-600 font-semibold">
           Step {animationStep + 1}
         </div>
         
@@ -120,10 +120,10 @@ export default function QuickSort() {
               >
                 <div
                   className={`w-20 h-24 rounded-lg shadow-lg flex items-center justify-center text-xl font-bold transition-all duration-500
-                    ${index === pivotIndex ? 'bg-pink-500 text-white' :
+                    ${index === pivotIndex ? 'bg-slate-500 text-white' :
                       highlightIndices.includes(index) ? 'bg-pink-300 text-white' :
-                      sorted ? 'bg-pink-400 text-white' :
-                      'bg-pink-200 text-pink-700'}`}
+                      sorted ? 'bg-slate-400 text-white' :
+                      'bg-slate-200 text-slate-700'}`}
                   style={{
                     transform: `translateY(${
                       index === pivotIndex ? '-20px' :
@@ -133,7 +133,7 @@ export default function QuickSort() {
                 >
                   {value}
                 </div>
-                <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs font-medium text-pink-500 bg-white/80 px-2 py-0.5 rounded-full">
+                <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs font-medium text-slate-500 bg-white/80 px-2 py-0.5 rounded-full">
                   {index}
                 </div>
               </div>
@@ -143,7 +143,7 @@ export default function QuickSort() {
 
         {/* Comparison message */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center">
-          <p className="text-pink-600 font-medium">
+          <p className="text-slate-600 font-medium">
             {comparison}
           </p>
         </div>
@@ -156,21 +156,21 @@ export default function QuickSort() {
       <div className="mb-8">
         <button
           onClick={() => setIsDefinitionOpen(!isDefinitionOpen)}
-          className="w-full text-left bg-pink-100 p-4 rounded-lg hover:bg-pink-200 transition-colors"
+          className="w-full text-left bg-slate-100 p-4 rounded-lg hover:bg-slate-200 transition-colors"
         >
-          <h2 className="text-xl font-semibold text-pink-800 flex justify-between items-center">
+          <h2 className="text-xl font-semibold text-slate-800 flex justify-between items-center">
             Quick Sort Definition
-            <span className="text-pink-600">{isDefinitionOpen ? '▼' : '▶'}</span>
+            <span className="text-slate-600">{isDefinitionOpen ? '▼' : '▶'}</span>
           </h2>
         </button>
         {isDefinitionOpen && (
           <div className="mt-4 p-4 bg-white rounded-lg shadow-md">
-            <h3 className="text-lg font-semibold text-pink-700 mb-2">What is Quick Sort?</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mb-2">What is Quick Sort?</h3>
             <p className="text-gray-700 mb-4">
               Quick Sort is a highly efficient, comparison-based sorting algorithm that uses a divide-and-conquer strategy. It works by selecting a 'pivot' element and partitioning the array around it.
             </p>
             
-            <h3 className="text-lg font-semibold text-pink-700 mb-2">How it Works:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mb-2">How it Works:</h3>
             <ol className="list-decimal list-inside text-gray-700 space-y-2">
               <li>Choose a pivot element from the array</li>
               <li>Partition the array around the pivot:
@@ -183,14 +183,14 @@ export default function QuickSort() {
               <li>Combine the results</li>
             </ol>
 
-            <h3 className="text-lg font-semibold text-pink-700 mt-4 mb-2">Time Complexity:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mt-4 mb-2">Time Complexity:</h3>
             <ul className="list-disc list-inside text-gray-700">
               <li>Best Case: O(n log n) - When pivot divides array into equal parts</li>
               <li>Worst Case: O(n²) - When array is already sorted or reverse sorted</li>
               <li>Average Case: O(n log n) - For random arrays</li>
             </ul>
 
-            <h3 className="text-lg font-semibold text-pink-700 mt-4 mb-2">Space Complexity:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mt-4 mb-2">Space Complexity:</h3>
             <p className="text-gray-700">O(log n) - Due to the recursive call stack</p>
           </div>
         )}
@@ -199,15 +199,15 @@ export default function QuickSort() {
       <div className="space-y-8">
         {/* Input section */}
         <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-pink-600">Quick Sort</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-slate-600">Quick Sort</h2>
           {error && (
-            <div className="bg-pink-100 border border-pink-400 text-pink-700 px-4 py-3 rounded mb-4" role="alert">
+            <div className="bg-slate-100 border border-slate-400 text-slate-700 px-4 py-3 rounded mb-4" role="alert">
               {error}
             </div>
           )}
           <div className="space-y-4">
             <div>
-              <label htmlFor="arrayInput" className="block text-sm font-medium text-pink-700 mb-1">
+              <label htmlFor="arrayInput" className="block text-sm font-medium text-slate-700 mb-1">
                 Array Input
               </label>
               <div className="flex gap-2">
@@ -217,17 +217,17 @@ export default function QuickSort() {
                   value={arrayInput}
                   onChange={(e) => setArrayInput(e.target.value)}
                   placeholder="Enter numbers separated by commas"
-                  className="flex-1 p-2 border border-pink-200 rounded focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  className="flex-1 p-2 border border-slate-200 rounded focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
                   aria-describedby="arrayInputHelp"
                 />
                 <button
                   onClick={handleInput}
-                  className="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors"
+                  className="bg-slate-600 text-white px-4 py-2 rounded hover:bg-slate-700 transition-colors"
                 >
                   Set Array
                 </button>
               </div>
-              <p id="arrayInputHelp" className="text-sm text-pink-500 mt-1">
+              <p id="arrayInputHelp" className="text-sm text-slate-500 mt-1">
                 Example: 5, 3, 8, 4, 2
               </p>
             </div>
@@ -235,7 +235,7 @@ export default function QuickSort() {
               onClick={handleSort}
               disabled={isSorting || array.length === 0}
               className={`w-full p-2 text-white rounded shadow-md transition-all duration-300 ${
-                isSorting || array.length === 0 ? 'bg-pink-300' : 'bg-pink-600 hover:bg-pink-700 hover:scale-105'
+                isSorting || array.length === 0 ? 'bg-pink-300' : 'bg-slate-600 hover:bg-slate-700 hover:scale-105'
               }`}
               aria-busy={isSorting}
             >
@@ -246,7 +246,7 @@ export default function QuickSort() {
 
         {/* Animation section */}
         <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-pink-600">Visualization</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-slate-600">Visualization</h2>
           {renderAnimation()}
         </div>
       </div>

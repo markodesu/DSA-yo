@@ -36,21 +36,21 @@ export default function Queue() {
       <div className="mb-8">
         <button
           onClick={() => setIsDefinitionOpen(!isDefinitionOpen)}
-          className="w-full text-left bg-pink-100 p-4 rounded-lg hover:bg-pink-200 transition-colors"
+          className="w-full text-left bg-slate-100 p-4 rounded-lg hover:bg-slate-200 transition-colors"
         >
-          <h2 className="text-xl font-semibold text-pink-800 flex justify-between items-center">
+          <h2 className="text-xl font-semibold text-slate-800 flex justify-between items-center">
             Queue Data Structure Definition
-            <span className="text-pink-600">{isDefinitionOpen ? '▼' : '▶'}</span>
+            <span className="text-slate-600">{isDefinitionOpen ? '▼' : '▶'}</span>
           </h2>
         </button>
         {isDefinitionOpen && (
           <div className="mt-4 p-4 bg-white rounded-lg shadow-md">
-            <h3 className="text-lg font-semibold text-pink-700 mb-2">What is a Queue?</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mb-2">What is a Queue?</h3>
             <p className="text-gray-700 mb-4">
               A Queue is a linear data structure that follows the First-In-First-Out (FIFO) principle. It's like a line of people waiting for a service, where the first person to join the line is the first to be served.
             </p>
             
-            <h3 className="text-lg font-semibold text-pink-700 mb-2">Key Operations:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mb-2">Key Operations:</h3>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li><strong>Enqueue:</strong> Adds an element to the rear of the queue</li>
               <li><strong>Dequeue:</strong> Removes and returns the front element</li>
@@ -59,7 +59,7 @@ export default function Queue() {
               <li><strong>Size:</strong> Returns the number of elements in the queue</li>
             </ul>
 
-            <h3 className="text-lg font-semibold text-pink-700 mt-4 mb-2">Time Complexity:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mt-4 mb-2">Time Complexity:</h3>
             <ul className="list-disc list-inside text-gray-700">
               <li>Enqueue: O(1) - Constant time</li>
               <li>Dequeue: O(1) - Constant time</li>
@@ -68,10 +68,10 @@ export default function Queue() {
               <li>Size: O(1) - Constant time</li>
             </ul>
 
-            <h3 className="text-lg font-semibold text-pink-700 mt-4 mb-2">Space Complexity:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mt-4 mb-2">Space Complexity:</h3>
             <p className="text-gray-700">O(n) - Where n is the number of elements in the queue</p>
 
-            <h3 className="text-lg font-semibold text-pink-700 mt-4 mb-2">Common Applications:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mt-4 mb-2">Common Applications:</h3>
             <ul className="list-disc list-inside text-gray-700">
               <li>Task scheduling in operating systems</li>
               <li>Print job management</li>
@@ -81,7 +81,7 @@ export default function Queue() {
               <li>Event handling in GUI applications</li>
             </ul>
 
-            <h3 className="text-lg font-semibold text-pink-700 mt-4 mb-2">Types of Queues:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mt-4 mb-2">Types of Queues:</h3>
             <ul className="list-disc list-inside text-gray-700">
               <li><strong>Simple Queue:</strong> Basic FIFO queue</li>
               <li><strong>Circular Queue:</strong> Reuses empty spaces</li>
@@ -89,7 +89,7 @@ export default function Queue() {
               <li><strong>Double-ended Queue (Deque):</strong> Can add/remove from both ends</li>
             </ul>
 
-            <h3 className="text-lg font-semibold text-pink-700 mt-4 mb-2">Implementation Methods:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mt-4 mb-2">Implementation Methods:</h3>
             <ul className="list-disc list-inside text-gray-700">
               <li>Array-based implementation</li>
               <li>Linked List-based implementation</li>

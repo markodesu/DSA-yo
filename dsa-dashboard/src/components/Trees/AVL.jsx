@@ -212,21 +212,21 @@ export default function AVL() {
       <div className="mb-8">
         <button
           onClick={() => setIsDefinitionOpen(!isDefinitionOpen)}
-          className="w-full text-left bg-pink-100 p-4 rounded-lg hover:bg-pink-200 transition-colors"
+          className="w-full text-left bg-slate-100 p-4 rounded-lg hover:bg-slate-200 transition-colors"
         >
-          <h2 className="text-xl font-semibold text-pink-800 flex justify-between items-center">
+          <h2 className="text-xl font-semibold text-slate-800 flex justify-between items-center">
             AVL Tree Definition
-            <span className="text-pink-600">{isDefinitionOpen ? '▼' : '▶'}</span>
+            <span className="text-slate-600">{isDefinitionOpen ? '▼' : '▶'}</span>
           </h2>
         </button>
         {isDefinitionOpen && (
           <div className="mt-4 p-4 bg-white rounded-lg shadow-md">
-            <h3 className="text-lg font-semibold text-pink-700 mb-2">What is an AVL Tree?</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mb-2">What is an AVL Tree?</h3>
             <p className="text-gray-700 mb-4">
               An AVL tree is a self-balancing binary search tree where the heights of the left and right subtrees of any node differ by at most one.
             </p>
             
-            <h3 className="text-lg font-semibold text-pink-700 mb-2">Key Features:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mb-2">Key Features:</h3>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li>Self-balancing property</li>
               <li>Height-balanced tree</li>
@@ -234,7 +234,7 @@ export default function AVL() {
               <li>Uses rotations to maintain balance</li>
             </ul>
 
-            <h3 className="text-lg font-semibold text-pink-700 mt-4 mb-2">Operations:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mt-4 mb-2">Operations:</h3>
             <ul className="list-disc list-inside text-gray-700">
               <li>Insertion: O(log n)</li>
               <li>Deletion: O(log n)</li>
@@ -247,15 +247,15 @@ export default function AVL() {
       <div className="space-y-8">
         {/* Input section */}
         <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-pink-600">AVL Tree</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-slate-600">AVL Tree</h2>
           {error && (
-            <div className="bg-pink-100 border border-pink-400 text-pink-700 px-4 py-3 rounded mb-4" role="alert">
+            <div className="bg-slate-100 border border-slate-400 text-slate-700 px-4 py-3 rounded mb-4" role="alert">
               {error}
             </div>
           )}
           <div className="space-y-4">
             <div>
-              <label htmlFor="nodeValue" className="block text-sm font-medium text-pink-700 mb-1">
+              <label htmlFor="nodeValue" className="block text-sm font-medium text-slate-700 mb-1">
                 Node Value
               </label>
               <div className="flex gap-2">
@@ -265,11 +265,11 @@ export default function AVL() {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Enter a number"
-                  className="flex-1 p-2 border border-pink-200 rounded focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  className="flex-1 p-2 border border-slate-200 rounded focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
                 />
                 <button
                   onClick={handleInsert}
-                  className="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors"
+                  className="bg-slate-600 text-white px-4 py-2 rounded hover:bg-slate-700 transition-colors"
                 >
                   Insert
                 </button>
@@ -280,12 +280,12 @@ export default function AVL() {
 
         {/* Visualization section */}
         <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-pink-600">Visualization</h2>
-          <div className="relative h-[600px] bg-gradient-to-b from-pink-50 to-white rounded-lg">
-            <div className="absolute top-4 left-4 text-pink-600 font-semibold">
+          <h2 className="text-2xl font-semibold mb-4 text-slate-600">Visualization</h2>
+          <div className="relative h-[600px] bg-gradient-to-b from-slate-50 to-white rounded-lg">
+            <div className="absolute top-4 left-4 text-slate-600 font-semibold">
               Step {animationStep + 1}
             </div>
-            <div className="absolute top-4 right-4 text-pink-600 font-medium">
+            <div className="absolute top-4 right-4 text-slate-600 font-medium">
               {operation}
             </div>
             <svg

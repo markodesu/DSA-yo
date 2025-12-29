@@ -87,7 +87,7 @@ export default function BinarySearch() {
       if (left > right) {
         setComparison(`Target ${targetNum} not found in the array`);
       }
-    } catch (err) {
+    } catch {
       setError('An error occurred during search');
     } finally {
       setIsSearching(false);
@@ -105,8 +105,8 @@ export default function BinarySearch() {
           <div
             key={index}
             className={`w-12 h-12 flex items-center justify-center rounded text-white font-bold shadow-md transition-all duration-300
-              ${index === foundIndex ? 'bg-pink-500 scale-110' :
-                highlightIndices.includes(index) ? 'bg-pink-300 animate-pulse' : 'bg-pink-400'}`}
+              ${index === foundIndex ? 'bg-slate-500 scale-110' :
+                highlightIndices.includes(index) ? 'bg-pink-300 animate-pulse' : 'bg-slate-400'}`}
             role="listitem"
             aria-label={`Element ${index}: ${value}`}
           >
@@ -121,8 +121,8 @@ export default function BinarySearch() {
     if (!animationArray.length) return null;
 
     return (
-      <div className="relative h-[400px] bg-gradient-to-b from-pink-50 to-white rounded-lg p-6">
-        <div className="absolute top-4 left-4 text-pink-600 font-semibold">
+      <div className="relative h-[400px] bg-gradient-to-b from-slate-50 to-white rounded-lg p-6">
+        <div className="absolute top-4 left-4 text-slate-600 font-semibold">
           Step {animationStep + 1}
         </div>
         
@@ -138,14 +138,14 @@ export default function BinarySearch() {
               >
                 <div
                   className={`w-16 h-16 rounded-lg shadow-lg flex items-center justify-center text-xl font-bold transition-all duration-500
-                    ${index === foundIndex ? 'bg-pink-500 text-white' :
+                    ${index === foundIndex ? 'bg-slate-500 text-white' :
                       index === highlightIndices[1] ? 'bg-pink-300 text-white' :
-                      index >= searchRange.left && index <= searchRange.right ? 'bg-pink-200 text-pink-700' :
-                      'bg-white text-pink-600 border-2 border-pink-200 opacity-50'}`}
+                      index >= searchRange.left && index <= searchRange.right ? 'bg-slate-200 text-slate-700' :
+                      'bg-white text-slate-600 border-2 border-slate-200 opacity-50'}`}
                 >
                   {value}
                 </div>
-                <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs font-medium text-pink-500 bg-white/80 px-2 py-0.5 rounded-full">
+                <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs font-medium text-slate-500 bg-white/80 px-2 py-0.5 rounded-full">
                   {index}
                 </div>
               </div>
@@ -161,14 +161,14 @@ export default function BinarySearch() {
               left: `calc(${(highlightIndices[1] * 100) / animationArray.length}% + ${(highlightIndices[1] * 16)}px)`,
             }}
           >
-            <div className="w-0 h-0 border-l-[10px] border-r-[10px] border-b-[20px] border-transparent border-b-pink-600"></div>
-            <div className="text-pink-600 font-medium text-center mt-2">Mid</div>
+            <div className="w-0 h-0 border-l-[10px] border-r-[10px] border-b-[20px] border-transparent border-b-slate-600"></div>
+            <div className="text-slate-600 font-medium text-center mt-2">Mid</div>
           </div>
         )}
 
         {/* Comparison message */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center">
-          <p className="text-pink-600 font-medium">
+          <p className="text-slate-600 font-medium">
             {comparison}
           </p>
         </div>
@@ -181,21 +181,21 @@ export default function BinarySearch() {
       <div className="mb-8">
         <button
           onClick={() => setIsDefinitionOpen(!isDefinitionOpen)}
-          className="w-full text-left bg-pink-100 p-4 rounded-lg hover:bg-pink-200 transition-colors"
+          className="w-full text-left bg-slate-100 p-4 rounded-lg hover:bg-slate-200 transition-colors"
         >
-          <h2 className="text-xl font-semibold text-pink-800 flex justify-between items-center">
+          <h2 className="text-xl font-semibold text-slate-800 flex justify-between items-center">
             Binary Search Definition
-            <span className="text-pink-600">{isDefinitionOpen ? '▼' : '▶'}</span>
+            <span className="text-slate-600">{isDefinitionOpen ? '▼' : '▶'}</span>
           </h2>
         </button>
         {isDefinitionOpen && (
           <div className="mt-4 p-4 bg-white rounded-lg shadow-md">
-            <h3 className="text-lg font-semibold text-pink-700 mb-2">What is Binary Search?</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mb-2">What is Binary Search?</h3>
             <p className="text-gray-700 mb-4">
               Binary Search is an efficient searching algorithm that works on sorted arrays by repeatedly dividing the search interval in half. It's much faster than linear search for large datasets.
             </p>
             
-            <h3 className="text-lg font-semibold text-pink-700 mb-2">How it Works:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mb-2">How it Works:</h3>
             <ol className="list-decimal list-inside text-gray-700 space-y-2">
               <li>Compare the target value with the middle element of the array</li>
               <li>If they match, return the middle index</li>
@@ -204,17 +204,17 @@ export default function BinarySearch() {
               <li>Repeat steps 1-4 until the element is found or the search interval is empty</li>
             </ol>
 
-            <h3 className="text-lg font-semibold text-pink-700 mt-4 mb-2">Time Complexity:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mt-4 mb-2">Time Complexity:</h3>
             <ul className="list-disc list-inside text-gray-700">
               <li>Best Case: O(1) - Element found at middle position</li>
               <li>Worst Case: O(log n) - Element not found or found at last step</li>
               <li>Average Case: O(log n) - Element found after several steps</li>
             </ul>
 
-            <h3 className="text-lg font-semibold text-pink-700 mt-4 mb-2">Space Complexity:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mt-4 mb-2">Space Complexity:</h3>
             <p className="text-gray-700">O(1) - Constant space as it only uses a few variables to store indices</p>
 
-            <h3 className="text-lg font-semibold text-pink-700 mt-4 mb-2">Important Note:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mt-4 mb-2">Important Note:</h3>
             <p className="text-gray-700">Binary Search requires the array to be sorted. If the array is not sorted, you must sort it first, which would add O(n log n) to the time complexity.</p>
           </div>
         )}
@@ -223,15 +223,15 @@ export default function BinarySearch() {
       <div className="space-y-8">
         {/* Input section */}
         <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-pink-600">Binary Search</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-slate-600">Binary Search</h2>
           {error && (
-            <div className="bg-pink-100 border border-pink-400 text-pink-700 px-4 py-3 rounded mb-4" role="alert">
+            <div className="bg-slate-100 border border-slate-400 text-slate-700 px-4 py-3 rounded mb-4" role="alert">
               {error}
             </div>
           )}
           <div className="space-y-4">
             <div>
-              <label htmlFor="arrayInput" className="block text-sm font-medium text-pink-700 mb-1">
+              <label htmlFor="arrayInput" className="block text-sm font-medium text-slate-700 mb-1">
                 Sorted Array Input
               </label>
               <input
@@ -240,15 +240,15 @@ export default function BinarySearch() {
                 value={arrayInput}
                 onChange={(e) => setArrayInput(e.target.value)}
                 placeholder="Enter sorted numbers separated by commas"
-                className="w-full p-2 border border-pink-200 rounded focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                className="w-full p-2 border border-slate-200 rounded focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
                 aria-describedby="arrayInputHelp"
               />
-              <p id="arrayInputHelp" className="text-sm text-pink-500 mt-1">
+              <p id="arrayInputHelp" className="text-sm text-slate-500 mt-1">
                 Example: 1, 2, 3, 4, 5 (must be sorted)
               </p>
             </div>
             <div>
-              <label htmlFor="targetInput" className="block text-sm font-medium text-pink-700 mb-1">
+              <label htmlFor="targetInput" className="block text-sm font-medium text-slate-700 mb-1">
                 Target Number
               </label>
               <input
@@ -257,14 +257,14 @@ export default function BinarySearch() {
                 value={target}
                 onChange={(e) => setTarget(e.target.value)}
                 placeholder="Enter target number"
-                className="w-full p-2 border border-pink-200 rounded focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                className="w-full p-2 border border-slate-200 rounded focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
               />
             </div>
             <button
               onClick={handleSearch}
               disabled={isSearching}
               className={`w-full p-2 text-white rounded shadow-md transition-all duration-300 ${
-                isSearching ? 'bg-pink-300' : 'bg-pink-600 hover:bg-pink-700 hover:scale-105'
+                isSearching ? 'bg-pink-300' : 'bg-slate-600 hover:bg-slate-700 hover:scale-105'
               }`}
               aria-busy={isSearching}
             >
@@ -276,7 +276,7 @@ export default function BinarySearch() {
 
         {/* Animation section */}
         <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-pink-600">Visualization</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-slate-600">Visualization</h2>
           {renderAnimation()}
         </div>
       </div>

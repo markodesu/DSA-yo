@@ -195,7 +195,7 @@ export default function Stack() {
         setPostfixExpression(postfix);
         const result = await evaluatePostfix(postfix);
         setEvaluationResult(result);
-      } catch (err) {
+      } catch {
         setError('Invalid expression');
       }
     } else {
@@ -213,7 +213,7 @@ export default function Stack() {
         setInfixExpression(infix);
         const result = await evaluatePostfix(postfixExpression);
         setEvaluationResult(result);
-      } catch (err) {
+      } catch {
         setError('Invalid postfix expression');
       }
     }
@@ -285,22 +285,22 @@ export default function Stack() {
       <div className="mb-8">
         <button
           onClick={() => setIsDefinitionOpen(!isDefinitionOpen)}
-          className="w-full text-left bg-pink-100 p-4 rounded-lg hover:bg-pink-200 transition-colors"
+          className="w-full text-left bg-slate-100 p-4 rounded-lg hover:bg-slate-200 transition-colors"
         >
-          <h2 className="text-xl font-semibold text-pink-800 flex justify-between items-center">
+          <h2 className="text-xl font-semibold text-slate-800 flex justify-between items-center">
             Stack Definition
-            <span className="text-pink-600">{isDefinitionOpen ? '▼' : '▶'}</span>
+            <span className="text-slate-600">{isDefinitionOpen ? '▼' : '▶'}</span>
           </h2>
         </button>
         {isDefinitionOpen && (
           <div className="mt-4 p-4 bg-white rounded-lg shadow-md">
-            <h3 className="text-lg font-semibold text-pink-700 mb-2">What is a Stack?</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mb-2">What is a Stack?</h3>
             <p className="text-gray-700 mb-4">
               A stack is a linear data structure that follows the Last In First Out (LIFO) principle.
               Elements are added and removed from the same end, called the top of the stack.
             </p>
             
-            <h3 className="text-lg font-semibold text-pink-700 mb-2">Key Operations:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mb-2">Key Operations:</h3>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li>Push: Adds an element to the top of the stack</li>
               <li>Pop: Removes and returns the top element</li>
@@ -309,7 +309,7 @@ export default function Stack() {
               <li>Size: Returns the number of elements in the stack</li>
             </ul>
 
-            <h3 className="text-lg font-semibold text-pink-700 mt-4 mb-2">Applications:</h3>
+            <h3 className="text-lg font-semibold text-slate-700 mt-4 mb-2">Applications:</h3>
             <ul className="list-disc list-inside text-gray-700">
               <li>Function call management</li>
               <li>Expression evaluation</li>
@@ -323,15 +323,15 @@ export default function Stack() {
       <div className="space-y-8">
         {/* Basic Stack Operations */}
         <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-pink-600">Stack Operations</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-slate-600">Stack Operations</h2>
           {error && (
-            <div className="bg-pink-100 border border-pink-400 text-pink-700 px-4 py-3 rounded mb-4" role="alert">
+            <div className="bg-slate-100 border border-slate-400 text-slate-700 px-4 py-3 rounded mb-4" role="alert">
               {error}
             </div>
           )}
           <div className="space-y-4">
             <div>
-              <label htmlFor="stackValue" className="block text-sm font-medium text-pink-700 mb-1">
+              <label htmlFor="stackValue" className="block text-sm font-medium text-slate-700 mb-1">
                 Value
               </label>
               <div className="flex gap-2">
@@ -341,11 +341,11 @@ export default function Stack() {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Enter a value"
-                  className="flex-1 p-2 border border-pink-200 rounded focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  className="flex-1 p-2 border border-slate-200 rounded focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
                 />
                 <button
                   onClick={push}
-                  className="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors"
+                  className="bg-slate-600 text-white px-4 py-2 rounded hover:bg-slate-700 transition-colors"
                 >
                   Push
                 </button>
@@ -354,25 +354,25 @@ export default function Stack() {
             <div className="flex gap-2">
               <button
                 onClick={pop}
-                className="flex-1 bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors"
+                className="flex-1 bg-slate-600 text-white px-4 py-2 rounded hover:bg-slate-700 transition-colors"
               >
                 Pop
               </button>
               <button
                 onClick={peek}
-                className="flex-1 bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors"
+                className="flex-1 bg-slate-600 text-white px-4 py-2 rounded hover:bg-slate-700 transition-colors"
               >
                 Peek
               </button>
               <button
                 onClick={isEmpty}
-                className="flex-1 bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors"
+                className="flex-1 bg-slate-600 text-white px-4 py-2 rounded hover:bg-slate-700 transition-colors"
               >
                 Is Empty
               </button>
               <button
                 onClick={size}
-                className="flex-1 bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors"
+                className="flex-1 bg-slate-600 text-white px-4 py-2 rounded hover:bg-slate-700 transition-colors"
               >
                 Size
               </button>
@@ -383,10 +383,10 @@ export default function Stack() {
         {/* Polish Notation Section */}
         <div className="bg-white p-6 rounded-lg shadow-lg">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-2xl font-semibold text-pink-600">Polish Notation</h2>
+            <h2 className="text-2xl font-semibold text-slate-600">Polish Notation</h2>
             <button
               onClick={() => setShowPolishNotation(!showPolishNotation)}
-              className="text-pink-600 hover:text-pink-700"
+              className="text-slate-600 hover:text-slate-700"
             >
               {showPolishNotation ? 'Hide' : 'Show'}
             </button>
@@ -399,8 +399,8 @@ export default function Stack() {
                   onClick={() => setConversionMode('infix-to-postfix')}
                   className={`flex-1 px-4 py-2 rounded transition-colors ${
                     conversionMode === 'infix-to-postfix'
-                      ? 'bg-pink-600 text-white'
-                      : 'bg-pink-100 text-pink-600 hover:bg-pink-200'
+                      ? 'bg-slate-600 text-white'
+                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                   }`}
                 >
                   Infix to Postfix
@@ -409,8 +409,8 @@ export default function Stack() {
                   onClick={() => setConversionMode('postfix-to-infix')}
                   className={`flex-1 px-4 py-2 rounded transition-colors ${
                     conversionMode === 'postfix-to-infix'
-                      ? 'bg-pink-600 text-white'
-                      : 'bg-pink-100 text-pink-600 hover:bg-pink-200'
+                      ? 'bg-slate-600 text-white'
+                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                   }`}
                 >
                   Postfix to Infix
@@ -419,7 +419,7 @@ export default function Stack() {
 
               {conversionMode === 'infix-to-postfix' ? (
                 <div>
-                  <label htmlFor="infixExpression" className="block text-sm font-medium text-pink-700 mb-1">
+                  <label htmlFor="infixExpression" className="block text-sm font-medium text-slate-700 mb-1">
                     Infix Expression
                   </label>
                   <div className="flex gap-2">
@@ -429,11 +429,11 @@ export default function Stack() {
                       value={infixExpression}
                       onChange={(e) => setInfixExpression(e.target.value)}
                       placeholder="Enter infix expression (e.g., 3 + 4 * 2)"
-                      className="flex-1 p-2 border border-pink-200 rounded focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                      className="flex-1 p-2 border border-slate-200 rounded focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
                     />
                     <button
                       onClick={handlePolishNotation}
-                      className="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors"
+                      className="bg-slate-600 text-white px-4 py-2 rounded hover:bg-slate-700 transition-colors"
                     >
                       Convert & Evaluate
                     </button>
@@ -441,7 +441,7 @@ export default function Stack() {
                 </div>
               ) : (
                 <div>
-                  <label htmlFor="postfixExpression" className="block text-sm font-medium text-pink-700 mb-1">
+                  <label htmlFor="postfixExpression" className="block text-sm font-medium text-slate-700 mb-1">
                     Postfix Expression
                   </label>
                   <div className="flex gap-2">
@@ -451,11 +451,11 @@ export default function Stack() {
                       value={postfixExpression}
                       onChange={(e) => setPostfixExpression(e.target.value)}
                       placeholder="Enter postfix expression (e.g., 3 4 2 * +)"
-                      className="flex-1 p-2 border border-pink-200 rounded focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                      className="flex-1 p-2 border border-slate-200 rounded focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
                     />
                     <button
                       onClick={handlePolishNotation}
-                      className="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors"
+                      className="bg-slate-600 text-white px-4 py-2 rounded hover:bg-slate-700 transition-colors"
                     >
                       Convert & Evaluate
                     </button>
@@ -464,28 +464,28 @@ export default function Stack() {
               )}
 
               {conversionMode === 'infix-to-postfix' && postfixExpression && (
-                <div className="p-4 bg-pink-50 rounded-lg">
-                  <h3 className="text-lg font-semibold text-pink-700 mb-2">Postfix Expression:</h3>
+                <div className="p-4 bg-slate-50 rounded-lg">
+                  <h3 className="text-lg font-semibold text-slate-700 mb-2">Postfix Expression:</h3>
                   <p className="text-gray-700 font-mono">{postfixExpression}</p>
                 </div>
               )}
 
               {conversionMode === 'postfix-to-infix' && infixExpression && (
-                <div className="p-4 bg-pink-50 rounded-lg">
-                  <h3 className="text-lg font-semibold text-pink-700 mb-2">Infix Expression:</h3>
+                <div className="p-4 bg-slate-50 rounded-lg">
+                  <h3 className="text-lg font-semibold text-slate-700 mb-2">Infix Expression:</h3>
                   <p className="text-gray-700 font-mono">{infixExpression}</p>
                 </div>
               )}
 
               {evaluationResult !== '' && (
-                <div className="p-4 bg-pink-50 rounded-lg">
-                  <h3 className="text-lg font-semibold text-pink-700 mb-2">Evaluation Result:</h3>
+                <div className="p-4 bg-slate-50 rounded-lg">
+                  <h3 className="text-lg font-semibold text-slate-700 mb-2">Evaluation Result:</h3>
                   <p className="text-gray-700 font-mono">{evaluationResult}</p>
                 </div>
               )}
 
-              <div className="p-4 bg-pink-50 rounded-lg">
-                <h3 className="text-lg font-semibold text-pink-700 mb-2">Instructions:</h3>
+              <div className="p-4 bg-slate-50 rounded-lg">
+                <h3 className="text-lg font-semibold text-slate-700 mb-2">Instructions:</h3>
                 {conversionMode === 'infix-to-postfix' ? (
                   <ul className="list-disc list-inside text-gray-700 space-y-2">
                     <li>Enter an infix expression using numbers and operators (+, -, *, /, ^)</li>
@@ -508,12 +508,12 @@ export default function Stack() {
 
         {/* Visualization section */}
         <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-pink-600">Visualization</h2>
-          <div className="relative h-[400px] bg-gradient-to-b from-pink-50 to-white rounded-lg">
-            <div className="absolute top-4 left-4 text-pink-600 font-semibold">
+          <h2 className="text-2xl font-semibold mb-4 text-slate-600">Visualization</h2>
+          <div className="relative h-[400px] bg-gradient-to-b from-slate-50 to-white rounded-lg">
+            <div className="absolute top-4 left-4 text-slate-600 font-semibold">
               Step {animationStep + 1}
             </div>
-            <div className="absolute top-4 right-4 text-pink-600 font-medium">
+            <div className="absolute top-4 right-4 text-slate-600 font-medium">
               {operation}
             </div>
             <div className="flex flex-col-reverse items-center h-full p-8">
@@ -522,8 +522,8 @@ export default function Stack() {
                   key={index}
                   className={`w-24 h-24 flex items-center justify-center text-2xl font-bold text-white transition-all duration-500 ${
                     highlightedIndex === index
-                      ? 'bg-pink-600 transform scale-110'
-                      : 'bg-pink-400'
+                      ? 'bg-slate-600 transform scale-110'
+                      : 'bg-slate-400'
                   }`}
                   style={{
                     marginBottom: index === stack.length - 1 ? '0' : '1rem',
